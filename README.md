@@ -31,9 +31,11 @@ Here i will leaving an open document with the add on already installed and some 
 
  following is some user settings you have to install so to import data from the script:
  
-Site Url: http://www.smartsheetsrock.com
-Consumer Key: blablabla
-Consumer Secret: somemoreblablabla
+> *Site Url*: http://www.smartsheetsrock.com 
+
+> *Consumer Key*: blablabla
+
+> *Consumer Secret*: somemoreblablabla
 
 ----------
 
