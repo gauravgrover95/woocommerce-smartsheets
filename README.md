@@ -1,20 +1,16 @@
 WooCommerce SmartSheets
 =======================
-***Google Spreadsheets add on to import your WooCommerce supported E-Commerce website data to Google Sheets.***
+*Google Spreadsheets add on to import your WooCommerce supported E-Commerce website data to Google Sheets.*
 
-
-----------
-No more writing data manually to Spreadsheets for your E-Commerce Website. This Google Spreadsheet add-on will help make your sheets smart enough to import data from your E-Commerce website for you in just few clicks 
+No more writing data manually to Spreadsheets for your E-Commerce Website. This Google Spreadsheet add-on will make your worksheets smart enough to import data from your E-Commerce website for you in just few clicks.
 
 ** Currently just supported for Orders. More Coming Soon...
 
 
-----------
-
 ## Why one would do that? ##
-Spreadsheets does a great job at handling the data, making it well structured and organization. Not only that it also supports various very powerful tools (like charts, graphs, functions) which make data visualization much more fun. "Wait! doesn't E-Commerce Solutions like Woo-Commerce itself doesn't have these things?" Well, Sure they do, but they don't give you the liberty to view, modify, mould and analyse the data whatever you want and  however you want. 
+Spreadsheets does a great job at handling the data, making it well structured and organizated. Not only that it also supports various very powerful tools (like charts, graphs, functions) which make data visualization much more fun. "Wait! doesn't E-Commerce Solutions like Woo-Commerce itself doesn't have these things?" Well, Sure they do, but they don't give you the full liberty to view, modify, ammend and analyse the data whatever you want and  however you want. 
 
-Also its support over various devices is phenomenal. Why wouldn't you want to keep all your data in your pocket to stay up to date with it.
+Also Spreadsheet's support over devices, of all screen sizes, is phenomenal. Why wouldn't you want to keep all your data in your pocket to stay up to date with it.
 
 
 ## Installation ##
