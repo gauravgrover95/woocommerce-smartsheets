@@ -1,0 +1,73 @@
+<!--
+Author: Gaurav Grover (gauravgrover95@gmail.com)
+Date: 09/06/2016
+Purpose: GUI for the "User Setting" option in the custom menu
+-->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+    <style>
+     button {
+       background: #61B450;
+       color: white;
+       float: right;
+     }
+     
+     input {
+       margin-bottom: 15px;
+       width: 280px;
+     }
+     
+     #status-box {
+        background: #F9EDBE;
+        width: 100px;
+        border: 1px solid #f7c4be;
+        margin: auto;
+        text-align: center;
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+ 
+    <div class="inputs">
+      <label>Site Url: <br><input type="text" name="url" placeholder="http://www.example.com" id="url"></label><br>
+      <label>Comsumer Key: <br><input type="text" name="consumer_key" placeholder="" id="consumer_key"></label><br>
+      <label>Consumer Secret: <br><input type="password" name="consumer_secret" placeholder="" id="consumer_secret"></label><br>
+      <button onclick="save()">Submit</button>
+    </div>
+    
+    <div id="status-box" >Processing...</div>
+    
+    <script>
+      
+      /**
+      * Displays loading status in the page itself
+      */
+      function displayLoader() {
+        var el = document.getElementById('status-box');
+        el.style.display="block";
+      }
+      
+      /**
+      * Success handler function for the google.script.run functions
+      */
+      function onSuccess() {
+        google.script.host.close();
+      }
+      
+      function save() {
+        displayLoader();
+        var url = document.getElementById("url").value;
+        var consumer_key = document.getElementById("consumer_key").value;
+        var consumer_secret = document.getElementById("consumer_secret").value;
+        google.script.run.withSuccessHandler(onSuccess).saveUserSetttings(url, consumer_key, consumer_secret);
+      }
+    </script>
+
+  </body>
+</html>
+
+
