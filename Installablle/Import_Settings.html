@@ -1,0 +1,108 @@
+<!--
+Author: Gaurav Grover (gauravgrover95@gmail.com)
+Date: 14/06/2016
+Purpose: GUI for the "Import Setting" option in the custom menu
+-->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+    <style>
+      
+      #status-box {
+        background: #F9EDBE;
+        width: 100px;
+        border: 1px solid #f7c4be;
+        margin: auto;
+        text-align: center;
+        display: none;
+      }
+    
+      input[name="submit"] {
+       background: #61B450;
+       color: white;
+       float: right;
+      }
+    </style>
+  
+
+  
+  </head>
+  <body>
+    <div class = "wrapper">
+      <div class="options">
+      <!-- "Name" attribute act as the header if the field and "data-value" stores json address of the corresponding field in comma seperated list -->
+        <label><input type="checkbox" name="id" data-value="id" checked> id</label><br>
+        <label><input type="checkbox" name="Order Number" data-value="order_number" checked> Order Number</label><br>
+        <label><input type="checkbox" name="Order Key" data-value="order_key" checked> Order Key</label><br>
+        <label><input type="checkbox" name="Status" data-value="status" checked> Status</label><br>
+        <label><input type="checkbox" name="Total" data-value="total" checked> Total</label><br>
+        <label><input type="checkbox" name="Total Tax" data-value="total_tax" checked> Total Tax</label><br>
+        <label><input type="checkbox" name="Customer First Name" data-value="billing_address,first_name" checked> Customer First Name</label><br>
+        <label><input type="checkbox" name="Customer Last Name" data-value="billing_address,last_name" checked> Customer Last Name</label><br>
+        <label><input type="checkbox" name="Total Line Items" data-value="total_line_items_quantity" checked> Total Line Items</label><br>
+        <label><input type="checkbox" name="Product Id" data-value="line_items,0,id" checked> Product id</label><br>
+        <label><input type="checkbox" name="Mode Of Payment" data-value="payment_details,method_title" checked> Mode of Payment</label><br>
+        <label><input type="checkbox" name="Paid" data-value="payment_details,paid" checked> Paid Or Not</label><br>
+      </div>
+  
+      <div class="submit">
+        <input type="submit" name="submit" value="Save" onclick="send()">
+        <input type="submit" name="submit" value="Use Defaults" onclick="removeCustomSettings()">
+      </div>
+    </div><br><br>
+    
+    <div id="status-box" >Processing...</div>
+
+  <script>
+      
+      /**
+      * Displays loading status in the page itself
+      */
+      function displayLoader() {
+        var el = document.getElementById('status-box');
+        el.style.display="block";
+      }
+      
+      /**
+      * Success handler function for the google.script.run functions
+      */
+      function onSuccess() {
+        google.script.host.close();
+      }
+      
+      /**
+      * Sends configuration received from user to the setImportSettings() in Import.gs
+      */
+      function send() {
+        displayLoader();
+        
+        /* get array of input tags */
+        var options = [];  
+        options = document.querySelectorAll(".options input");
+
+        /* iterate over fetched array and save the values in a new object for only checked inputs */ 
+        var obj = {};
+        var attrName, attrValue;
+        for(var i=0; i<12; ++i ) {
+          if(options[i].checked) {
+            attrName = options[i].getAttribute("name");
+            attrValue = options[i].getAttribute("data-value");
+            obj[attrName] = attrValue;
+          }  
+        }
+        
+        obj = JSON.stringify(obj);
+        google.script.run.withSuccessHandler(onSuccess).setImportSettings(obj);
+      }
+      
+      function removeCustomSettings() {
+        displayLoader();
+        
+        /* Remove Custom Import Properties */
+        google.script.run.withSuccessHandler(onSuccess).deleteUserOrdersImportSettings();
+      }
+  </script>
+  </body>
+</html>
