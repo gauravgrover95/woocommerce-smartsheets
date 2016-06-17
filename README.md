@@ -1,4 +1,4 @@
-WooCommerce SmartSheets
+![Google Sheets Logo](https://www.gstatic.com/images/icons/material/product/1x/sheets_64dp.png) WooCommerce SmartSheets
 =======================
 *Google Sheets add-on to import your WooCommerce supported E-Commerce website data to Google Sheets.*
 
