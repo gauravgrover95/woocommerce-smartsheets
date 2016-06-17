@@ -43,7 +43,7 @@ and its done...  :)
 
 
 ## Lets take a Demo ##
-Here i am leaving some screenshots to guide you through the demo for the usage of the add-n. 
+Here i am leaving some screenshots to guide you through the demo for the usage of the add-on. 
 
 For Screenshots click [here](http://imgur.com/a/4GVeJ)
 
