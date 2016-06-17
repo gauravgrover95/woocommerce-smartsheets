@@ -45,7 +45,7 @@ and its done...  :)
 ## Lets take a Demo ##
 Here i am leaving some screenshots to guide you through the demo for the usage of the add-n. 
 
-For Screenshots click [here](http://imgur.com/a/mWfSm)
+For Screenshots click [here](http://imgur.com/a/4GVeJ)
 
 *"A picture is worth the million words"*
 
